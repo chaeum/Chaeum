@@ -1,7 +1,8 @@
 import mysql.connector.pooling as pooling
-from flask import Flask
+from flask import Flask, url_for
 from flask_jwt_extended import JWTManager
 from flask_restful import Api
+import os
 
 # from flask_jwt_extended import JWTManager, jwt_required, \
 #     create_access_token,  jwt_refresh_token_required, \
@@ -12,6 +13,22 @@ app = Flask(__name__)
 app.debug = True
 app.config['SECRET_KEY'] = 'testtest'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://admin:wjdrbdud1`@testwebinstance.ciowpdvbzwrs.ap-northeast-2.rds.amazonaws.com:3306/chaeum'
+
+# browser cache ignore for static files
+@app.context_processor
+def override_url_for():
+    return dict(url_for=dated_url_for)
+
+
+def dated_url_for(endpoint, **values):
+    if endpoint == 'static':
+        filename = values.get('filename', None)
+        if filename:
+            file_path = os.path.join(app.root_path,
+                                     endpoint, filename)
+            values['q'] = int(os.stat(file_path).st_mtime)
+    return url_for(endpoint, **values)
+
 #
 api = Api(app)
 # db = SQLAlchemy(app)
@@ -57,3 +74,9 @@ from chaeum.resources.api.review_summary import ReviewSummary
 api.add_resource(ReviewSummary, '/api/review_summarys')
 from chaeum.resources.api.like import Like
 api.add_resource(Like, '/api/likes', '/api/likes/<int:like_id>')
+
+
+from chaeum.resources.web.index import Index
+api.add_resource(Index, '/index')
+from chaeum.resources.web.index import Sample
+api.add_resource(Sample, '/sample')
