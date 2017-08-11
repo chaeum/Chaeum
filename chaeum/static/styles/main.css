@@ -37,6 +37,7 @@
 .bc2 {color:#495662;}
 .bc3 {color:#acacac;}
 .bc4 {color:#f3f3f3;}
+.bc5 {color:#6f7478;}
 
 /* accent color */
 .ac1 {color:#9e3dff;}
@@ -49,6 +50,7 @@
 .h2 {font-size:1.75em;font-family:'Nanum Gothic Regular';} /* 28px */
 
 /* body font */
+.b0 {font-size:1.25em;font-family:'Nanum Gothic Regular';} /* 20px */
 .b1 {font-size:1.125em;font-family:'Nanum Gothic Regular';} /* 18px */
 .b2 {font-size:1em;font-family:'Nanum Gothic Regular';} /* 16px */
 .b3 {font-size:0.75em;font-family:'Nanum Gothic Regular';} /* 12px */
@@ -90,7 +92,7 @@ header .top .menu {position:absolute;right:0}
 header .top .menu .sub_menu_wrap {display:inline-block;}
 header .top .menu .sub_menu {margin:0 0.625em 0 0.5625em;}
 header .top .menu .search {position:relative;display:inline-block;width:9.5em;height:1.25em;margin-left:4.0625em;border-bottom:0.125em solid #563540;}
-header .top .menu .search input {width:100%;border:none;background-color:#ffffff;padding:0;}
+header .top .menu .search input {padding:0 0 0 0.8333333333333334em;border:none;background-color:#ffffff;}
 header .top .menu .search .icon {position:absolute;cursor:pointer;background-image:url("../images/ico_search.png");width:1.0625em;height:1.0625em;right:0;top:0;}
 header .top .menu .search .auto_comp {position:absolute;width:9.375em;height:16.25em;padding:1.25em 0;border:0.0625em solid #c2c5c9;border-top:none;background-color:#ffffff;top:1.375em;z-index:1;}
 header .top .menu .search .auto_comp .title {position:relative;padding:0 0.8333333333333334em;}
