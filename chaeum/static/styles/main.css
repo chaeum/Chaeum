@@ -107,7 +107,7 @@ nav .menu {display:inline-block;height:100%;vertical-align:middle;}
 nav .menu .sub_menu_wrap {display:inline-block;width:7.1875em;}
 header nav .menu .sub_menu_wrap {padding-top:2.625em;}
 header nav .menu .sub_menu_wrap div {display:inline-block;padding:0.3888888888888889em 1.3888888888888888em;}
-header nav .menu .sub_menu_wrap div.on {border:0px solid;border-radius:1.25em;background-color:#ff531d;color:#ffffff;}
+header nav .menu .sub_menu_wrap div.on {border:0 solid;border-radius:1.25em;background-color:#ff531d;color:#ffffff;}
 header subnav {display:block;position:absolute;width:100%;background-color:#ffffff;height:20em;}
 header subnav .menu {padding:2.5em 0 0 13.375em;}
 header subnav .menu .sub_menu_wrap {display:inline-block;width:7.12em;vertical-align:top;}
