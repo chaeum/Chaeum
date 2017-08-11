@@ -7,5 +7,5 @@ def output_html(data, code, headers=None):
     return resp
 
 
-def render_html(template, code=200, headers=None):
-    return output_html(render_template(template), code, headers)
+def render_html(template, code=200, headers=None, **context):
+    return output_html(render_template(template, **context), code, headers)
