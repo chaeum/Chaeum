@@ -22,10 +22,10 @@
       <div class="list">
         {% set l = range(0, 4) %}
         {% for value in l %}
-        {% set cl = 'item hover_shadow' %}
-        {% if value == l[-1] %}
-        {% set cl = 'item hover_shadow last' %}
-        {% endif %}
+          {% set cl = 'item hover_shadow' %}
+          {% if value == l[-1] %}
+            {% set cl = 'item hover_shadow last' %}
+          {% endif %}
         <a href="#" class="{{ cl }}">
           <div class="prod_img">
             <img src="{{ url_for('static', filename='images/sample_prod.png') }}" />
