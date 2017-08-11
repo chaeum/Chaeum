@@ -91,7 +91,7 @@ header .top .menu .sub_menu_wrap {display:inline-block;}
 header .top .menu .sub_menu {margin:0 0.625em 0 0.5625em;}
 header .top .menu .search {position:relative;display:inline-block;width:9.5em;height:1.25em;margin-left:4.0625em;border-bottom:0.125em solid #563540;}
 header .top .menu .search input {width:100%;border:none;background-color:#ffffff;padding:0;}
-header .top .menu .search icon {position:absolute;background-image:url("../images/ico_search.png");width:1.0625em;height:1.0625em;right:0;top:0;}
+header .top .menu .search .icon {position:absolute;cursor:pointer;background-image:url("../images/ico_search.png");width:1.0625em;height:1.0625em;right:0;top:0;}
 header .top .menu .search .auto_comp {position:absolute;width:9.375em;height:16.25em;padding:1.25em 0;border:0.0625em solid #c2c5c9;border-top:none;background-color:#ffffff;top:1.375em;z-index:1;}
 header .top .menu .search .auto_comp .title {position:relative;padding:0 0.8333333333333334em;}
 header .top .menu .search .auto_comp .title icon {position:absolute;background-image:url("../images/dropdown_up.png");width:1.3333333333333333em;height:0.6666666666666666em;right:0.8333333333333334em;top:0.16666666666666666em;}

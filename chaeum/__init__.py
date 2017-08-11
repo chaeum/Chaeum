@@ -78,3 +78,5 @@ api.add_resource(Like, '/api/likes', '/api/likes/<int:like_id>')
 
 from chaeum.resources.web.index import Index
 api.add_resource(Index, '/index')
+from chaeum.resources.web.index import Search
+api.add_resource(Search, '/search')
