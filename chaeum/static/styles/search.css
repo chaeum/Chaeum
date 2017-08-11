@@ -1,6 +1,6 @@
 /* content */
 .content .bg_wrap {background-color:#f4f6f8;}
-.content .bg_wrap .wrap {padding-top:79px;}
+.content .bg_wrap .wrap {padding-top:4.9375em;}
 .content .result {position:relative;padding-bottom:9.875em;}
 .content .result .title {text-align:center;}
 .content .result .title .text span {margin-left:0.625em;}
@@ -20,8 +20,8 @@
 .content .result .list .item .info img {margin-right:0.3125em;}
 
 /* not found */
-.content .result .list .nf {padding-top:5px;text-align:center;}
-.content .result .list .nf p {margin:0 0 15px 0;}
+.content .result .list .nf {padding-top:0.3125em;text-align:center;}
+.content .result .list .nf p {margin:0 0 0.9375em 0;}
 .content .result .list .nf .search {position:relative;display:inline-block;margin-top:3.75em;width:16.875em;height:1.25em;border-bottom:0.125em solid #ff531d;text-align:left;}
 .content .result .list .nf .search input {width:15em;padding:0 0 0 0.8333333333333334em;border:none;}
 .content .result .list .nf .search input:focus {background-color:#f4f6f8;}
