@@ -94,7 +94,7 @@ header .top .menu .sub_menu {margin:0 0.625em 0 0.5625em;}
 header .top .menu .search {position:relative;display:inline-block;width:9.5em;height:1.25em;margin-left:4.0625em;border-bottom:0.125em solid #563540;}
 header .top .menu .search input {padding:0 0 0 0.8333333333333334em;border:none;background-color:#ffffff;}
 header .top .menu .search .icon {position:absolute;cursor:pointer;background-image:url("../images/ico_search.png");width:1.0625em;height:1.0625em;right:0;top:0;}
-header .top .menu .search .auto_comp {position:absolute;width:9.375em;height:16.25em;padding:1.25em 0;border:0.0625em solid #c2c5c9;border-top:none;background-color:#ffffff;top:1.375em;z-index:1;}
+header .top .menu .search .auto_comp {position:absolute;width:9.375em;height:16.25em;padding:1.25em 0;border:0.0625em solid #c2c5c9;border-top:none;background-color:#ffffff;top:1.375em;z-index:2;}
 header .top .menu .search .auto_comp .title {position:relative;padding:0 0.8333333333333334em;}
 header .top .menu .search .auto_comp .title icon {position:absolute;background-image:url("../images/dropdown_up.png");width:1.3333333333333333em;height:0.6666666666666666em;right:0.8333333333333334em;top:0.16666666666666666em;}
 header .top .menu .search .auto_comp .list {margin-top:1.0625em;}
@@ -110,7 +110,7 @@ nav .menu .sub_menu_wrap {display:inline-block;width:7.1875em;}
 header nav .menu .sub_menu_wrap {padding-top:2.625em;}
 header nav .menu .sub_menu_wrap div {display:inline-block;padding:0.3888888888888889em 1.3888888888888888em;}
 header nav .menu .sub_menu_wrap div.on {border:0 solid;border-radius:1.25em;background-color:#ff531d;color:#ffffff;}
-header subnav {display:block;position:absolute;width:100%;background-color:#ffffff;height:20em;}
+header subnav {display:block;position:absolute;width:100%;background-color:#ffffff;height:20em;z-index:1;}
 header subnav .menu {padding:2.5em 0 0 13.375em;}
 header subnav .menu .sub_menu_wrap {display:inline-block;width:7.12em;vertical-align:top;}
 header subnav .menu .sub_menu_wrap a {display:inline-block;margin-bottom:1.1875em;padding:0.4375em 0.4375em;}
