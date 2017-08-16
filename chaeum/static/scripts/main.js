@@ -16,16 +16,19 @@ $(function() {
     });
 
     // top sign in button
-    $('#top_signin').on('click', function(e) {
-        popupSwap('signin');
+    $('#top_sign_in').on('click', function(e) {
+        popupSwap('sign_in');
         popupToggle();
         e.preventDefault();
     });
 
     // top sign up button
-    $('#top_signup').on('click', function(e) {
-        popupSwap('signup');
+    $('#top_sign_up').on('click', function(e) {
+        popupSwap('sign_up');
         popupToggle();
         e.preventDefault();
     });
+
+    // select box initialize
+    $('select').simpleselect();
 });

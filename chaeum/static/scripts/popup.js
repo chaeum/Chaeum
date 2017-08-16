@@ -1,6 +1,21 @@
 function popupSwap(type) {
     $('.popup_frame > div[class*="popup_"]').hide();
     $('.popup_frame > div[class="popup_'+type+'"]').show();
+
+    if(type == 'sign_up') {
+        multiPopupSwap('account');
+    } else{
+        multiPopupSwap();
+    }
+}
+
+function multiPopupSwap(type) {
+    if(type == undefined) {
+        $('.popup_frame .popup_multi').show();
+    } else {
+        $('.popup_frame .popup_multi').hide();
+        $('.popup_frame .popup_multi.'+type).show();
+    }
 }
 
 function popupToggle() {
@@ -19,4 +34,17 @@ $(function() {
         popupToggle();
         e.preventDefault();
     });
+
+    // popup swap
+    $('.popup_frame button[type="popup_swap"]').on('click', function(e) {
+        popupSwap($(this).attr('swapto'));
+        e.preventDefault();
+    });
+
+    // popup body swap
+    $('.popup_frame button[type="popup_body_swap"]').on('click', function(e) {
+        multiPopupSwap($(this).attr('swapto'));
+        e.preventDefault();
+    });
+
 });

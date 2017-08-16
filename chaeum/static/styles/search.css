@@ -5,8 +5,9 @@
 .content .result .title {text-align:center;}
 .content .result .title .text span {margin-left:0.625em;}
 .content .result .title .text .h1 {margin-bottom:0.5em;}
-.content .result .title .category {position:absolute;right:0;top:2em;}
-.content .result .title .category .dropdown {padding:0.9375em 1.25em;width:14.375em;height:1.125em;}
+.content .result .title .category {position:absolute;width:17em;height:3.125em;right:0;top:2.3em;}
+.content .result .title .category .simpleselect .placeholder {width:12.777777777777779em;height:1em;}
+.content .result .title .category .simpleselect .options {width:15em;}
 
 /* found */
 .content .result .list {padding-top:2.8125em;}
