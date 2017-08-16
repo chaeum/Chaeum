@@ -7,14 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/popup.css') }}" />
 
   <script type="text/javascript" src="{{ url_for('static', filename='scripts/jquery-3.2.1.min.js') }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='scripts/popup.js') }}"></script>
   <title>CHAEUM</title>
   {% endblock %}
 </head>
 
 <body>
+  <div class="bg_popup" style="display:none;"></div>
   <header>
     <!-- 최상단 검색바 영역 -->
     <div class="top">
@@ -22,8 +25,8 @@
         <span class="menu">
           <div class="sub_menu_wrap b3">
             <a href="#" class="sub_menu bc1">마이페이지</a>|
-            <a href="#" class="sub_menu bc1">로그인</a>|
-            <a href="#" class="sub_menu bc1">회원가입</a>
+            <a id="top_signin" href="#" class="sub_menu bc1">로그인</a>|
+            <a id="top_signup" href="#" class="sub_menu bc1">회원가입</a>
           </div>
           <div class="search">
             <form action="/search">
@@ -177,5 +180,6 @@
       </div>
     </nav>
   </footer>
+  {% include 'popup.html' %}
 </body>
 </html>

@@ -1,0 +1,44 @@
+/* common */
+.popup_frame {position:absolute;top:10%;width:37.5em;height:40em;background-color:#ffffff;z-index:100;}
+.popup_frame .popup_header {height:4.5625em;text-align:center;background-color:#f3f3f3;}
+.popup_header p {margin:0;padding-top:1.5555555555555556em;}
+.popup_header .close {position:absolute;display:inline-block;width:1.5625em;height:1.5625em;background-image:url('../images/popup_close.png');right:2.1875em;top:1.5em;}
+.popup_frame .popup_body {padding:2.375em 1.875em 0;}
+.popup_body input[type=text] {width:26.11111111111111em;height:1em;padding:0.8888888888888888em 0.9444444444444444em 0.8888888888888888em 2.8333333333333335em;background-color:#f3f3f3;border-width:0.05555555555555555em;}
+.popup_frame button.normal {padding:1em;background-color:#34404b;color:#ffffff;border:none;}
+.popup_body button.kakao {padding:0.8888888888888888em 1.8333333333333333em 0.8888888888888888em 2.888888888888889em;background-color:#ead800;color:#473120;border:none;}
+.popup_body button.naver {padding:0.8888888888888888em 1em 0.8888888888888888em 2.888888888888889em;background-color:#29aa05;color:#ffffff;border:none;}
+.popup_body button.email {padding:16px 23px 16px 58px;background-color:#4175f3;color:#ffffff;border:none;}
+.popup_body button.kakao + .icon_kakao {position:absolute;width:1.5em;height:1.375em;background-image:url('../images/ico_kakaotalk.png');left:1.3125em;top:0.875em;}
+.popup_body button.naver + .icon_naver {position:absolute;width:1.25em;height:1.125em;background-image:url('../images/ico_naver.png');left:1.25em;top:1em;}
+.popup_body button.email + .icon_email {position:absolute;width:19px;height:19px;background-image:url('../images/ico_at_white.png');left:24px;top:16px;}
+.popup_body input[type=checkbox] {display:none;}
+.popup_body input[type=checkbox] + label {display:inline-block;width:1.4375em;height:1.4375em;background-image:url('../images/btn_unchecked.png');}
+.popup_body input[type=checkbox]:checked + label {background-image:url('../images/btn_checked.png');}
+.popup_frame .popup_footer {height:3.25em;padding:0.75em 1.875em 0.75em 1.875em;background-color:#f3f3f3;}
+
+/* sign in */
+.popup_signin .popup_body p {margin:0;padding:0 0 1.8333333333333333em;text-align:center;}
+.popup_signin .popup_body .input_wrap {position:relative;margin:0 0 1.25em 0;}
+.popup_signin .popup_body .input_wrap .icon_at {position:absolute;width:1.1875em;height:1.1875em;background-image:url('../images/ico_at.png');left:1.125em;top:1em;}
+.popup_signin .popup_body .input_wrap .icon_key {position:absolute;width:0.9375em;height:1.1875em;background-image:url('../images/ico_key.png');left:1.25em;top:1em;}
+.popup_signin .popup_body .btn_login {display:block;width:100%;margin-bottom:1.1111111111111112em;padding:1em 13.5em;}
+.popup_signin .popup_body .text_wrap {margin-bottom:4.5625em;height:1.4375em;}
+.popup_signin .popup_body .text_wrap span {display:inline-block;vertical-align:top;margin-top:0.1111111111111111em;}
+.popup_signin .popup_body .text_wrap .find_id_pass {float:right;margin-top:0.1111111111111111em;}
+.popup_signin .popup_body .btn_wrap {margin-bottom:3.1875em;height:3.0625em;}
+.popup_signin .popup_body .btn_wrap .btn_kakao_wrap {position:relative;float:left;}
+.popup_signin .popup_body .btn_wrap .btn_naver_wrap {position:relative;float:right;}
+.popup_signin .popup_body .btn_wrap button {width:13.333333333333334em;height:2.7222222222222223em;}
+.popup_signin .popup_footer p {display:inline-block;margin:0.8888888888888888em 0 0 0;}
+.popup_signin .popup_footer .btn_sign_up {position:absolute;right:1.6666666666666667em;padding:0.8888888888888888em 2.6666666666666665em 0.8888888888888888em 3em;}
+
+/* sign up */
+.popup_signup .popup_body .progress {margin:0 0 128px;}
+.popup_signup .popup_body .tab {display:inline-block;padding:8px 16px 7px;border:0px solid;border-radius:17px;}
+.popup_signup .popup_body .tab.on {background-color:#ff531d;color:#ffffff;}
+.popup_signup .popup_body .btn_div {margin-bottom:22px;text-align:center;}
+.popup_signup .popup_body .btn_div .btn_wrap {position:relative;display:inline-block;}
+.popup_signup .popup_body .btn_div .btn_wrap button {width:240px;height:50px;}
+.popup_signup .popup_body .btn_div .btn_wrap button.kakao {padding:16px 38px 16px 65px;}
+
