@@ -5,7 +5,9 @@
 .popup_header .close {position:absolute;display:inline-block;width:1.5625em;height:1.5625em;background-image:url('../images/popup_close.png');right:2.1875em;top:1.5em;}
 .popup_frame .popup_body {padding:2.375em 1.875em 0;}
 .popup_body input[type=text] {width:26.11111111111111em;height:1em;padding:0.8888888888888888em 0.9444444444444444em 0.8888888888888888em 2.8333333333333335em;background-color:#f3f3f3;border-width:0.05555555555555555em;}
+.popup_body input[type=text]:focus {background-color:#ffffff;}
 .popup_frame button.normal {padding:1em;background-color:#34404b;color:#ffffff;border:none;}
+.popup_frame button.normal:disabled {background-color:#acacac;}
 .popup_body button.kakao {padding:0.8888888888888888em 1.8333333333333333em 0.8888888888888888em 2.888888888888889em;background-color:#ead800;color:#473120;border:none;}
 .popup_body button.naver {padding:0.8888888888888888em 1em 0.8888888888888888em 2.888888888888889em;background-color:#29aa05;color:#ffffff;border:none;}
 .popup_body button.email {padding:16px 23px 16px 58px;background-color:#4175f3;color:#ffffff;border:none;}
@@ -14,7 +16,8 @@
 .popup_body button.email + .icon_email {position:absolute;width:19px;height:19px;background-image:url('../images/ico_at_white.png');left:24px;top:16px;}
 .popup_body input[type=checkbox] {display:none;}
 .popup_body input[type=checkbox] + label {display:inline-block;width:1.4375em;height:1.4375em;background-image:url('../images/btn_unchecked.png');}
-.popup_body input[type=checkbox]:checked + label {background-image:url('../images/btn_checked.png');}
+/*.popup_body input[type=checkbox]:checked + label {background-image:url('../images/btn_checked.png');}*/
+.popup_body input[type=checkbox]:checked + label {margin:1.5px 1px;width:21px;height:20px;background-image:url('../images/btn_agree.png');}
 .popup_body input[type=radio] {display:none;}
 .popup_body input[type=radio] + label {display:inline-block;padding:16px 0;border-width:1px;cursor:pointer;}
 .popup_body input[type=radio]:checked + label {background-color:#ff531d;color:#ffffff;border:1px solid #ff531d;}
@@ -40,7 +43,13 @@
 .popup_sign_up .popup_body .progress {margin:0 0 53px;}
 .popup_sign_up .popup_body .tab {display:inline-block;padding:8px 16px 7px;border:0px solid;border-radius:17px;}
 .popup_sign_up .popup_body .tab.on {background-color:#ff531d;color:#ffffff;}
+.popup_sign_up .popup_body p {margin:0 0 18px;text-align:center;}
 .popup_sign_up .popup_multi {margin:0;}
+.popup_sign_up .popup_multi .select_div {text-align:center;}
+.popup_sign_up .popup_multi .select_div .simpleselect {display:inline-block;width:240px;}
+.popup_sign_up .popup_multi .select_div .simpleselect .options {width:238px;}
+.popup_sign_up .popup_footer .btn_wrap {text-align:center;}
+.popup_sign_up .popup_footer .btn_wrap button {padding:16px 57px;margin-right:20px;}
 /* sign up - account */
 .popup_sign_up .account .popup_body .progress {margin:0 0 128px;}
 .popup_sign_up .account .popup_body .btn_div {margin-bottom:22px;text-align:center;}
@@ -48,13 +57,24 @@
 .popup_sign_up .account .popup_body .btn_div .btn_wrap button {width:240px;height:50px;}
 .popup_sign_up .account .popup_body .btn_div .btn_wrap button.kakao {padding:16px 38px 16px 65px;}
 /* sign up - sex & birth */
-.popup_sign_up .sexbirth .popup_body p {margin:0 0 18px;text-align:center;}
 .popup_sign_up .sexbirth .popup_body .sex {margin:0 0 50px;}
 .popup_sign_up .sexbirth .popup_body .sex .btn_div {margin-bottom:20px;text-align:center;}
 .popup_sign_up .sexbirth .popup_body .sex .btn_div .btn_wrap {display:inline-block;}
 .popup_sign_up .sexbirth .popup_body .sex .btn_div .btn_wrap input[type=radio] + label {width:240px;height:18px;}
 .popup_sign_up .sexbirth .popup_body .birth {margin:0 0 81px;}
-.popup_sign_up .sexbirth .popup_body .birth .select_div {text-align:center;}
-.popup_sign_up .sexbirth .popup_body .birth .select_div .simpleselect {display:inline-block;width:240px;}
-.popup_sign_up .sexbirth .popup_footer .btn_wrap {text-align:center;}
-.popup_sign_up .sexbirth .popup_footer .btn_wrap button {padding:16px 57px;margin-right:20px;}
+/* sign up - district */
+.popup_sign_up .district .popup_body .state {margin:0 0 51px;}
+.popup_sign_up .district .popup_body .city {margin:0 0 161px;}
+/* sign up - nickname */
+.popup_sign_up .nickname .popup_body p {line-height:25px;}
+.popup_sign_up .nickname .popup_body .input_wrap input[type=text] {margin-bottom:20px;padding:15px 0 14px 30px;width:28.22222222222222em;}
+.popup_sign_up .nickname .popup_body .input_wrap button {margin-bottom:186px;padding:16px;width:100%;height:50px;}
+/* sign up - term of agreement */
+.popup_sign_up .agreement .popup_body textarea {padding:17px 28px;resize:none;width:26.77777777777778em;height:86px;background-color:#f3f3f3;}
+.popup_sign_up .agreement .popup_body .checkbox_wrap {margin:16px 0 27px;text-align:center;}
+.popup_sign_up .agreement .popup_body .checkbox_wrap span {display:inline-block;margin-left:9px;padding-top:2px;vertical-align:top;}
+/* sign up - complete */
+.popup_sign_up .complete .popup_body .img_wrap {padding:65px 0 197px;text-align:center;}
+.popup_sign_up .complete .popup_body .img_wrap img {width:42px;height:45px;}
+.popup_sign_up .complete .popup_body .img_wrap p {margin:22px 0 0;line-height:25px;}
+.popup_sign_up .complete .popup_footer .btn_login {display:block;padding:17px;width:100%;height:52px;}
