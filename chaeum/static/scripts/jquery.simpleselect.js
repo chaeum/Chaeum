@@ -308,8 +308,12 @@
 				this.ssOptionsContainer
 					.css({
 						top: /*- (ssOptionPosition.top - excessSpaceAbove)*/ this.ssPlaceholder.outerHeight()
-					})
-					.height(ssOptionsContainerNewHeight) // Using .height() instead of .css("height", value) gives us access to the cssHook for "height" that adapts the height value depending on the options container's box model (updated cssHook available since jQuery 1.8)
+					});
+				if(ssOptionsContainerNewHeight >= this.ssPlaceholder.outerHeight()) {
+				    this.ssOptionsContainer
+					    .height(ssOptionsContainerNewHeight); // Using .height() instead of .css("height", value) gives us access to the cssHook for "height" that adapts the height value depending on the options container's box model (updated cssHook available since jQuery 1.8)
+				}
+				this.ssOptionsContainer
 					.scrollTop(excessSpaceAbove);
 				
 			// If the options container doesn't need scrollbars nor resizing
