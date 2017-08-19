@@ -23,11 +23,6 @@ post_parser = reqparse.RequestParser()
 # 6 : brnd
 #########################################
 post_parser.add_argument(
-    'category', dest='category', choices=('1', '2', '3', '4', '5', '6'),
-    type=str, location='json', required=True,
-    help='category is fault',
-)
-post_parser.add_argument(
     'owner_id', dest='owner_id',
     type=int, location='json', required=True,
     help='owner_id is fault',
@@ -37,42 +32,11 @@ post_parser.add_argument(
     type=int, location='json', required=False,
     help='hairprd_id is fault',
 )
-post_parser.add_argument(
-    'med_id', dest='med_id',
-    type=int, location='json', required=False,
-    help='med_id is fault',
-)
-post_parser.add_argument(
-    'hairshop_id', dest='hairshop_id',
-    type=int, location='json', required=False,
-    help='hairshop_id is fault',
-)
-post_parser.add_argument(
-    'clinic_id', dest='clinic_id',
-    type=int, location='json', required=False,
-    help='clinic_id is fault',
-)
-post_parser.add_argument(
-    'magazine_id', dest='magazine_id',
-    type=int, location='json', required=False,
-    help='magazine_id is fault',
-)
-post_parser.add_argument(
-    'brnd_id', dest='brnd_id',
-    type=int, location='json', required=False,
-    help='brnd_id is fault',
-)
 
 list_fields = {
     'like_id': fields.Integer,
-    'category': fields.String,
     'owner_id': fields.Integer,
     'hairprd_id': fields.Integer,
-    'med_id': fields.Integer,
-    'hairshop_id': fields.Integer,
-    'clinic_id': fields.Integer,
-    'magazine_id': fields.Integer,
-    'brnd_id': fields.Integer,
 }
 
 result_fields = {
@@ -82,36 +46,43 @@ result_fields = {
 }
 
 
-def create_like(category, owner_id, hairprd_id=None, med_id=None,
-                hairshop_id=None, clinic_id=None, magazine_id=None, brnd_id=None):
+def create_like(owner_id, hairprd_id=None):
     conn = cnx_pool.get_connection()
     cursor = conn.cursor()
     retObj = {}
 
     try:
-        query = """
+        insert_query = """
             INSERT
-              INTO TBLIKE(category, owner_id, hairprd_id, med_id,
-                          hairshop_id, clinic_id, magazine_id, brnd_id)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+              INTO TBLIKE(category, owner_id, hairprd_id)
+            VALUES (1, %s, %s)
         """
-        like = cursor.execute(query, (category, owner_id, hairprd_id, med_id,
-                                      hairshop_id, clinic_id, magazine_id, brnd_id))
+        like = cursor.execute(insert_query, (owner_id, hairprd_id))
 
         if cursor.rowcount == 1:
             retObj = {
                 "like_id": cursor.lastrowid,
-                "category": category,
+                "category": 1,
                 "owner_id": owner_id,
                 "hairprd_id": hairprd_id,
-                "med_id": med_id,
-                "hairshop_id": hairshop_id,
-                "clinic_id": clinic_id,
-                "magazine_id": magazine_id,
-                "brnd_id": brnd_id,
             }
+
+        update_query = """
+            UPDATE TBHAIRPRD
+               SET like_cnt = like_cnt + 1
+             WHERE hairprd_id = %s
+        """
+        hairprd = cursor.execute(update_query, (hairprd_id,))
+
+        if cursor.rowcount != 1:
+            conn.rollback()
+            return False, None
+        else:
+            conn.commit()
+
     except Exception as e:
         print(e, file=sys.stdout)
+        conn.rollback()
         return False, None
     finally:
         conn.close()
@@ -131,36 +102,9 @@ def fetch_list(owner_id, limit, offset, ordering, asc):
           LEFT JOIN TBUSER AS b
             ON a.owner_id = b.user_id
           LEFT JOIN TBHAIRPRD AS c
-            ON a.hairprd_id = (CASE WHEN a.category = '1'
-                                    THEN c.hairprd_id
-                                    ELSE null
-                               END)
-          LEFT JOIN TBMEDICINE AS d
-            ON a.med_id = (CASE WHEN a.category = '2'
-                                    THEN d.med_id
-                                    ELSE null
-                               END)
-          LEFT JOIN TBHAIRSHOP AS e
-            ON a.hairshop_id = (CASE WHEN a.category = '3'
-                                    THEN e.hairshop_id
-                                    ELSE null
-                               END)
-          LEFT JOIN TBCLINIC AS f
-            ON a.clinic_id = (CASE WHEN a.category = '4'
-                                    THEN f.clinic_id
-                                    ELSE null
-                               END)
-          LEFT JOIN TBMAGAZINE AS g
-            ON a.magazine_id = (CASE WHEN a.category = '5'
-                                    THEN g.magazine_id
-                                    ELSE null
-                               END)
-          LEFT JOIN TBBRND AS h
-            ON a.brnd_id = (CASE WHEN a.category = '6'
-                                    THEN h.brnd_id
-                                    ELSE null
-                               END)
-         WHERE a.owner_id = %s
+            ON a.hairprd_id = c.hairprd_id
+         WHERE a.category = 1
+           AND a.owner_id = %s
     """
 
     query = query + 'ORDER BY ' + ordering + ' ' + asc + ' \n'
@@ -203,7 +147,7 @@ def fetch_list(owner_id, limit, offset, ordering, asc):
     return True, retObjList
 
 
-def fetch_detail(like_id):
+def fetch_detail(review_id):
     conn = cnx_pool.get_connection()
     cursor = conn.cursor()
 
@@ -244,11 +188,11 @@ def fetch_detail(like_id):
                                     THEN h.brnd_id
                                     ELSE null
                                END)
-         WHERE a.like_id = %s
+         WHERE a.review_id = %s
     """
 
     try:
-        cursor.execute(query, (like_id,))
+        cursor.execute(query, (review_id,))
         result = cursor.fetchall()
         retObjList = []
 
@@ -342,13 +286,11 @@ def fetch_list_cnt(owner_id):
     return count
 
 
-class Like(Resource):
-
+class LikeHairPrd(Resource):
     @marshal_with(result_fields)
     def post(self):
         args = post_parser.parse_args()
-        result, like = create_like(args.category, args.owner_id, isnull(args.hairprd_id), isnull(args.med_id),
-                                   isnull(args.hairshop_id), isnull(args.clinic_id), isnull(args.magazine_id), isnull(args.brnd_id))
+        result, like = create_like(args.owner_id, isnull(args.hairprd_id))
 
         # print(args.magazine_id, file=sys.stdout)
 
@@ -370,6 +312,7 @@ class Like(Resource):
         # args = post_parser.parse_args()
         # current_user = get_jwt_identity()
         args = request.args
+        hairprd_id = args.get('hairprd_id')
         limit = args.get('limit')
         offset = args.get('offset')
         ordering = args.get('ordering')
@@ -380,12 +323,11 @@ class Like(Resource):
         if asc is None:
             asc = 'DESC'
 
-        if like_id is None:
-            # result, like = fetch_list(like_id, limit, offset, ordering, asc)
-            # count = fetch_list_cnt(like_id)
-            result = None
+        if like_id is not None:
+            result, like = fetch_list(hairprd_id, limit, offset, ordering, asc)
+            count = fetch_list_cnt(hairprd_id)
         else:
-            result, like = fetch_detail(like_id)
+            result, like = fetch_detail(like_id, hairprd_id)
             if result is False:
                 count = 0
             else:

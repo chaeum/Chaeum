@@ -44,16 +44,38 @@ api.add_resource(Brnd, '/api/brnds', '/api/brnds/<int:brnd_id>')
 from chaeum.resources.api.hairprd import HairPrd
 api.add_resource(HairPrd, '/api/hairprds', '/api/hairprds/<int:hairprd_id>')
 from chaeum.resources.api.medicine import Medicine
-api.add_resource(Medicine, '/api/medicines', '/api/medicines/<int:medicine_id>')
+api.add_resource(Medicine, '/api/meds', '/api/meds/<int:med_id>')
+from chaeum.resources.api.medicine_spec import MedicineSpec
+api.add_resource(MedicineSpec, '/api/specmeds', '/api/specmeds/<int:med_id>')
 from chaeum.resources.api.medicine_norm import MedicineNorm
-api.add_resource(MedicineNorm, '/api/medicines', '/api/medicines/<int:medicine_id>')
-from chaeum.resources.api.clinic import Clinic
-api.add_resource(Clinic, '/api/clinics', '/api/clinics/<int:clinic_id>')
+api.add_resource(MedicineNorm, '/api/normmeds', '/api/normmeds/<int:med_id>')
+from chaeum.resources.api.medicine_etc import MedicineEtc
+api.add_resource(MedicineEtc, '/api/etcmeds', '/api/etcmeds/<int:med_id>')
 from chaeum.resources.api.hairshop import HairShop
 api.add_resource(HairShop, '/api/hairshops', '/api/hairshops/<int:hairshop_id>')
+from chaeum.resources.api.clinic import Clinic
+api.add_resource(Clinic, '/api/clinics', '/api/clinics/<int:clinic_id>')
+from chaeum.resources.api.comp import Comp
+api.add_resource(Comp, '/api/comps', '/api/comps/<int:comp_id>')
+from chaeum.resources.api.complist import CompList
+api.add_resource(CompList, '/api/complists', '/api/complists/<int:complist_id>')
+from chaeum.resources.api.complist_hairprd import CompList_Hairprd
+api.add_resource(CompList_Hairprd, '/api/comp_hairprds', '/api/comp_hairprds/<int:complist_id>')
+from chaeum.resources.api.complist_medicine import CompList_Medicine
+api.add_resource(CompList_Medicine, '/api/comp_meds', '/api/comp_meds/<int:complist_id>')
 from chaeum.resources.api.review import Review
 api.add_resource(Review, '/api/reviews', '/api/reviews/<int:review_id>')
-from chaeum.resources.api.review_summary import ReviewSummary
-api.add_resource(ReviewSummary, '/api/review_summarys')
+from chaeum.resources.api.review_hairprd import ReviewHairprd
+api.add_resource(ReviewHairprd, '/api/review_hairprds')
+from chaeum.resources.api.review_medicine import ReviewMedicine
+api.add_resource(ReviewMedicine, '/api/review_meds')
+from chaeum.resources.api.review_clinic import ReviewClinic
+api.add_resource(ReviewClinic, '/api/review_clinics')
 from chaeum.resources.api.like import Like
 api.add_resource(Like, '/api/likes', '/api/likes/<int:like_id>')
+from chaeum.resources.api.like_hairprd import LikeHairPrd
+api.add_resource(LikeHairPrd, '/api/like_hairprds')
+from chaeum.resources.api.like_check import LikeCheck
+api.add_resource(LikeCheck, '/api/like_check')
+from chaeum.resources.api.like_owner import LikeOwner
+api.add_resource(LikeOwner, '/api/like_owners')
