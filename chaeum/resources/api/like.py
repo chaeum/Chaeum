@@ -327,15 +327,14 @@ def fetch_list_cnt(owner_id):
 
     try:
         cursor.execute(query, (owner_id,))
-        result = cursor.fetchall()
-        retObjList = []
+        result = cursor.fetchone()
         count = 0
 
         for item in result:
             count = item
 
     except Exception as e:
-        return False, None
+        count = -1
     finally:
         conn.close()
 

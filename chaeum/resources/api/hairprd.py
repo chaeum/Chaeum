@@ -176,20 +176,19 @@ def fetch_list_cnt(keyword):
         SELECT count(*)
           FROM TBHAIRPRD a, TBBRND b
          WHERE a.hairprd_nm like %s
-           AND a.brnd_id = b.brnd_id
+           AND a.brnd_id = b.brnd_iddd
     """
 
     try:
         cursor.execute(query, ('%' + keyword + '%',))
-        result = cursor.fetchall()
-        retObjList = []
+        result = cursor.fetchone()
         count = 0
 
         for item in result:
             count = item
 
     except Exception as e:
-        return False, None
+        count = -1
     finally:
         conn.close()
 
@@ -255,4 +254,4 @@ class HairPrd(Resource):
                 'count': count,
                 'results': hairprd
             }
-            return responseObject, 200
+            return responseObject

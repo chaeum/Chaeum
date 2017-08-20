@@ -120,16 +120,18 @@ def fetch_list_cnt(comp_id, hairprd_id):
            AND a.comp_id = %s
            AND a.hairprd_id = %s
     """
-    cursor.execute(query, (comp_id, hairprd_id))
-    result = cursor.fetchall()
-    retObjList = []
+
 
     try:
+        cursor.execute(query, (comp_id, hairprd_id))
+        result = cursor.fetchone()
+        count = 0
+
         for item in result:
             count = item
 
     except Exception as e:
-        return False, None
+        count = -1
     finally:
         conn.close()
 
