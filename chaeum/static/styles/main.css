@@ -84,8 +84,11 @@ a.no_line:hover {text-decoration:none;}*/
 
 /* content */
 body {margin:0;}
+.content .bg_wrap {background-color:#f4f6f8;}
 .wrap {max-width:75em;margin:0 auto;}
 .bg_popup {position:absolute;z-index:99;width:100%;background-color:#000000;opacity:0.7;}
+.hover_shadow {transition:box-shadow 0.5s;-webkit-transition:box-shadow 0.5s;}
+.hover_shadow:hover {box-shadow:0.125em 0.125em 0.625em #aaaaaa;transition:box-shadow 0.5s;-webkit-transition:box-shadow 0.5s;}
 /*.content {min-height:118.75em;}*/
 
 /* header */
@@ -111,7 +114,8 @@ nav .logo img {max-width:9.5em;max-height:2.0625em;vertical-align:middle;}
 nav .menu {display:inline-block;height:100%;vertical-align:middle;}
 nav .menu .sub_menu_wrap {display:inline-block;width:7.1875em;}
 header nav .menu .sub_menu_wrap {padding-top:2.625em;}
-header nav .menu .sub_menu_wrap div {display:inline-block;padding:0.3888888888888889em 1.3888888888888888em;}
+header nav .menu .sub_menu_wrap div {display:inline-block;padding:0.3888888888888889em 1.3888888888888888em;cursor:pointer;}
+header nav .menu .sub_menu_wrap div:hover {border:0 solid;border-radius:1.25em;background-color:#ff531d;color:#ffffff;}
 header nav .menu .sub_menu_wrap div.on {border:0 solid;border-radius:1.25em;background-color:#ff531d;color:#ffffff;}
 header subnav {display:block;position:absolute;width:100%;background-color:#ffffff;height:20em;z-index:1;}
 header subnav .menu {padding:2.5em 0 0 13.375em;}

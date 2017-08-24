@@ -7,12 +7,12 @@ search_parser.add_argument(
     'q', type=str, help='search query'
 )
 
-class Index(Resource):
+class WebIndex(Resource):
     def get(self):
         return render_html('index.html')
 
 
-class Search(Resource):
+class WebSearch(Resource):
     def get(self):
         args = search_parser.parse_args()
         return render_html('search.html', query=args.q)
