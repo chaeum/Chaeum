@@ -1,4 +1,13 @@
 $(function() {
+    // navigation bar on from current page urls
+    $('header nav .sub_menu_wrap div').each(function(index) {
+        var from = $(this).attr('from');
+        var currentUrl = window.location.href;
+        if (currentUrl.indexOf(from) >= 0) {
+            $(this).addClass('on');
+        }
+    });
+
     // sub navigation bar on/off slide
     $('header nav .sub_menu_wrap').click(function() {
         $('header subnav').slideToggle();

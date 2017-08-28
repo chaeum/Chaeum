@@ -105,3 +105,16 @@
 .popup_review .popup_footer button {width:166px;height:47px;padding:15px;}
 .popup_review .popup_footer button.close {margin-right:15px;}
 .popup_review .popup_footer button.post {background-color:#9e3dff;}
+
+/* program */
+.popup_program .popup_body {height:495px;overflow:scroll;}
+.popup_program .popup_body p {margin:0 0 13px 0;}
+.popup_program .popup_body .program_desc {margin-bottom:23px;}
+.popup_program .popup_body .program_desc img {display:inline-block;margin-right:20px;width:100px;height:100px;}
+.popup_program .popup_body .program_desc .program_desc_text {display:inline-block;margin-top:15px;vertical-align:top;}
+.popup_program .popup_body .program_steps .program_step {margin-bottom:16px;}
+.popup_program .popup_body .program_steps .program_step img {width:200px;height:100px;margin-right:25px;}
+.popup_program .popup_body .program_steps .program_step .program_step_text {display:inline-block;width:310px;vertical-align:top;}
+.popup_program .popup_body .program_steps .program_step .program_step_text p {margin:0;}
+.popup_program .popup_footer {text-align:center;padding:13px;height:47px;}
+.popup_program .popup_footer button {width:166px;height:47px;padding:15px;}
