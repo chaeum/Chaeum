@@ -47,4 +47,19 @@ $(function() {
         e.preventDefault();
     });
 
+    // review score handling
+    var reviewScore = 3;
+    $('.popup_frame .popup_review .icon_review_score').on('click', function(e) {
+        var score = parseInt($(this).attr('value'));
+        reviewScore = score;
+
+        $('.popup_frame .popup_review .icon_review_score').each(function(index) {
+            var curScore = parseInt($(this).attr('value'));
+            if(curScore <= score) {
+                $(this).removeClass('off');
+            } else {
+                $(this).addClass('off');
+            }
+        });
+    });
 });

@@ -94,8 +94,8 @@
 .popup_review .popup_body .review_score {height:101px;margin-bottom:26px;}
 .popup_review .popup_body .review_score .review_score_text {display:inline-block;}
 .popup_review .popup_body .review_score img {float:right;}
-.popup_review .popup_body .review_score_on {display:inline-block;margin-right:5px;width:30px;height:23px;background-image:url('../images/ico_review_score_on.png');}
-.popup_review .popup_body .review_score_off {display:inline-block;margin-right:5px;width:30px;height:23px;background-image:url('../images/ico_review_score_off.png');}
+.popup_review .popup_body .icon_review_score {display:inline-block;margin-right:5px;width:30px;height:23px;background-image:url('../images/ico_review_score_on.png');}
+.popup_review .popup_body .icon_review_score.off {background-image:url('../images/ico_review_score_off.png');}
 .popup_review .popup_body .review_text {margin-bottom:51px;}
 .popup_review .popup_body .review_text textarea {width:482px;height:84px;}
 .popup_review .popup_body .review_image .review_images {margin-bottom:23px;}
