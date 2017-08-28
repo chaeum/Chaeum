@@ -30,7 +30,7 @@
           {% if loop.index > 0 and loop.index % 4 == 0 %}
           {% set cl = 'item hover_shadow last' %}
           {% endif %}
-          <a href="#" class="{{ cl }}">
+          <a href="/hairprds/1" class="{{ cl }}">
             <div class="prod_img">
               <img src="{{ url_for('static', filename='images/sample_prod.png') }}" />
             </div>
@@ -43,6 +43,7 @@
           {% endfor %}
         </div>
       </div>
+      <!-- item pagination -->
       <div class="pagination_wrap">
         <div class="pagination">
           <a href="#" class="left"></a>

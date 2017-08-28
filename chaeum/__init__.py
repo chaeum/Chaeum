@@ -80,5 +80,7 @@ from chaeum.resources.web.index import WebIndex
 api.add_resource(WebIndex, '/index')
 from chaeum.resources.web.index import WebSearch
 api.add_resource(WebSearch, '/search')
-from chaeum.resources.web.hairprd import WebHairPrd
-api.add_resource(WebHairPrd, '/hairprds')
+from chaeum.resources.web.hairprd import WebHairPrdList
+api.add_resource(WebHairPrdList, '/hairprds')
+from chaeum.resources.web.hairprd import WebHairPrdDetail
+api.add_resource(WebHairPrdDetail, '/hairprds/<int:hairprd_id>')
