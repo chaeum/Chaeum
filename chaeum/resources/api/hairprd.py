@@ -176,7 +176,7 @@ def fetch_list_cnt(keyword):
         SELECT count(*)
           FROM TBHAIRPRD a, TBBRND b
          WHERE a.hairprd_nm like %s
-           AND a.brnd_id = b.brnd_iddd
+           AND a.brnd_id = b.brnd_id
     """
 
     try:
