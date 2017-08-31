@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/magazine.css') }}" />
+{% endblock %}
+{% block content %}
+<div class="bg_wrap">
+  <div class="wrap">
+    <div class="padding_wrap">
+      <div class="list">
+        <div class="item bg_ac3">
+          <p class="h1 bc0">탈모를<br/>극복한 연예인</p>
+        </div>
+        <div class="item bg_ac4">
+          <p class="h1 bc0">머리가 뭐<br/>대수냐구요?</p>
+        </div>
+        <div class="item bg_ac2">
+          <p class="h1 bc0">발모에 도움이 되는<br/>샴푸 방법</p>
+        </div>
+        <div class="item bg_bc2">
+          <p class="h1 bc0">탈모인이 골프운동 시<br/>주의할 점</p>
+        </div>
+      </div>
+      {% include 'util/pagination.html' %}
+    </div>
+  </div>
+</div>
+{% endblock %}

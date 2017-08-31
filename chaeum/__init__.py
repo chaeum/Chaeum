@@ -88,3 +88,5 @@ from chaeum.resources.web.hairshop import WebHairShopList
 api.add_resource(WebHairShopList, '/hairshops')
 from chaeum.resources.web.hairshop import WebHairShopDetail
 api.add_resource(WebHairShopDetail, '/hairshops/<int:hairshop_id>')
+from chaeum.resources.web.magazine import WebMagazineList
+api.add_resource(WebMagazineList, '/magazines')
