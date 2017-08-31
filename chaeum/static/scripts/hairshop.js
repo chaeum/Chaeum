@@ -1,10 +1,10 @@
 $(function() {
     // tab swap when clicked
-    $('.tab').on('click', function(e) {
+    $('.prd_header .prd_tabs .tab').on('click', function(e) {
         var swapto = $(this).attr('swapto');
 
         // tab change
-        $('.tab').removeClass('on');
+        $('.prd_header .prd_tabs .tab').removeClass('on');
         $(this).addClass('on');
 
         // body change
