@@ -33,17 +33,32 @@
 
 
 /* base color */
+.bc0 {color:#ffffff;}
 .bc1 {color:#34404b;}
 .bc2 {color:#495662;}
 .bc3 {color:#acacac;}
 .bc4 {color:#f3f3f3;}
 .bc5 {color:#6f7478;}
 
+/* background base color */
+.bg_bc0 {background-color:#ffffff;}
+.bg_bc1 {background-color:#34404b;}
+.bg_bc2 {background-color:#495662;}
+.bg_bc3 {background-color:#acacac;}
+.bg_bc4 {background-color:#f3f3f3;}
+.bg_bc5 {background-color:#6f7478;}
+
 /* accent color */
 .ac1 {color:#9e3dff;}
 .ac2 {color:#ff531d;}
 .ac3 {color:#37ae5e;}
 .ac4 {color:#0088e2;}
+
+/* background accent color */
+.bg_ac1 {background-color:#9e3dff;}
+.bg_ac2 {background-color:#ff531d;}
+.bg_ac3 {background-color:#37ae5e;}
+.bg_ac4 {background-color:#0088e2;}
 
 /* header font */
 .h1 {font-size:2.5em;font-family:'Nanum Gothic Regular';} /* 40px */
