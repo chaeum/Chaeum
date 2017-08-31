@@ -1,0 +1,16 @@
+<!-- item pagination -->
+<div class="pagination_wrap">
+  <div class="pagination">
+    <a href="#" class="left"></a>
+    {% set p = range(1, 7) %}
+    {% set cur = 1 %}
+    {% for index in p %}
+    {% set cl = 'num b1 bc3' %}
+    {% if index == cur %}
+    {% set cl = 'num b1 ac2' %}
+    {% endif %}
+    <a href="#" class="{{cl}}">{{index}}</a>
+    {% endfor %}
+    <a href="#" class="right"></a>
+  </div>
+</div>

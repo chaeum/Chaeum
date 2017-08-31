@@ -12,12 +12,6 @@
 .padding_wrap .list .item .info {text-align:center;margin:2em 0 0 0;}
 .padding_wrap .list .item .info .name {margin:0.5357142857142857em 0;}
 .padding_wrap .list .item .info img {margin-right:0.3125em;}
-.padding_wrap .pagination_wrap {padding:18px 0 102px;}
-.padding_wrap .pagination {height:20px;padding:20px 0;background-color:#ffffff;text-align:center;}
-.padding_wrap .pagination a {display:inline-block;vertical-align:top;}
-.padding_wrap .pagination .left {width:11px;height:20px;margin-right:50px;background-image:url('../images/pagination_left_disabled.png');}
-.padding_wrap .pagination .right {width:11px;height:20px;margin-left:50px;background-image:url('../images/pagination_right_active.png');}
-.padding_wrap .pagination .num {margin:0 8px;}
 
 /* detail */
 .bg_white {background-color:#ffffff !important;}

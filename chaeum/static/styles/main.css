@@ -140,3 +140,11 @@ footer nav .contact div span,
 footer nav .contact div a {display:block;line-height:1.5em;}
 footer nav .contact div .title {margin-bottom:0.5em;}
 footer nav .contact div img {width:1.125em;height:0.6875em;margin-right:0.625em;}
+
+/* pagination */
+.pagination_wrap {padding:18px 0 102px;}
+.pagination {height:20px;padding:20px 0;background-color:#ffffff;text-align:center;}
+.pagination a {display:inline-block;vertical-align:top;}
+.pagination .left {width:11px;height:20px;margin-right:50px;background-image:url('../images/pagination_left_disabled.png');}
+.pagination .right {width:11px;height:20px;margin-left:50px;background-image:url('../images/pagination_right_active.png');}
+.pagination .num {margin:0 8px;}
