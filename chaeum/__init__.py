@@ -80,15 +80,26 @@ from chaeum.resources.web.index import WebIndex
 api.add_resource(WebIndex, '/index')
 from chaeum.resources.web.index import WebSearch
 api.add_resource(WebSearch, '/search')
+
 from chaeum.resources.web.hairprd import WebHairPrdList
 api.add_resource(WebHairPrdList, '/hairprds')
 from chaeum.resources.web.hairprd import WebHairPrdDetail
 api.add_resource(WebHairPrdDetail, '/hairprds/<int:hairprd_id>')
+
 from chaeum.resources.web.hairshop import WebHairShopList
 api.add_resource(WebHairShopList, '/hairshops')
 from chaeum.resources.web.hairshop import WebHairShopDetail
 api.add_resource(WebHairShopDetail, '/hairshops/<int:hairshop_id>')
+
 from chaeum.resources.web.magazine import WebMagazineList
 api.add_resource(WebMagazineList, '/magazines')
+
 from chaeum.resources.web.board import WebBoardList
 api.add_resource(WebBoardList, '/boards')
+
+from chaeum.resources.web.medicine import WebMedicineSpecList
+api.add_resource(WebMedicineSpecList, '/medicines/spec')
+from chaeum.resources.web.medicine import WebMedicineNormList
+api.add_resource(WebMedicineNormList, '/medicines/norm')
+from chaeum.resources.web.medicine import WebMedicineEtcList
+api.add_resource(WebMedicineEtcList, '/medicines/etc')

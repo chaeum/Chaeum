@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/medicine.css') }}" />
+{% endblock %}
+{% block content %}
+<div class="bg_wrap">
+  <div class="wrap">
+    <div class="padding_wrap">
+      <!-- title image -->
+      <img src="{{ url_for('static', filename='images/medicine_etc_title.png') }}" class="img_title"/>
+
+      <!-- sorting type -->
+      <div class="sort_type">
+        <select>
+          <option value="popularity">인기순</option>
+          <option value="name">이름순</option>
+          <option value="point">평점순</option>
+        </select>
+      </div>
+
+      <!-- item list -->
+      <div class="list">
+        <div>
+          {% set l = range(0, 12) %}
+          {% for value in l %}
+          {% set cl = 'item hover_shadow' %}
+          {% if loop.index > 0 and loop.index % 4 == 0 %}
+          {% set cl = 'item hover_shadow last' %}
+          {% endif %}
+          <a href="/medicines/1" class="{{ cl }}">
+            <div class="prod_img">
+              <img src="{{ url_for('static', filename='images/sample_medicine_etc.png') }}" />
+            </div>
+            <div class="info">
+              <div class="b2 bc1">의약외품</div>
+              <div class="name h2 bc1">노테몬</div>
+              <div class="b2 bc3">현대약품</div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% include 'util/pagination.html' %}
+    </div>
+  </div>
+</div>
+{% endblock %}

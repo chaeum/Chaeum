@@ -62,7 +62,7 @@
         <a href="/index" class="logo"><span></span><img src="{{ url_for('static', filename='images/logo.png') }}" /></a>
         <div class="menu">
           <div class="sub_menu_wrap"><div class="b1 bc1" from="hairprds">헤어제품</div></div>
-          <div class="sub_menu_wrap"><div class="b1 bc1">의약품</div></div>
+          <div class="sub_menu_wrap"><div class="b1 bc1" from="medicines">의약품</div></div>
           <div class="sub_menu_wrap"><div class="b1 bc1" from="hairshops">미용실</div></div>
           <div class="sub_menu_wrap"><div class="b1 bc1">병∙의원</div></div>
           <div class="sub_menu_wrap"><div class="b1 ac4">성분</div></div>
@@ -83,9 +83,9 @@
             <a href="/hairprds" class="b2 bc1">흑채</a>
           </div>
           <div class="sub_menu_wrap">
-            <a href="#" class="b2 bc1">전문의약품</a>
-            <a href="#" class="b2 bc1">일반의약품</a>
-            <a href="#" class="b2 bc1">의약외품</a>
+            <a href="/medicines/spec" class="b2 bc1">전문의약품</a>
+            <a href="/medicines/norm" class="b2 bc1">일반의약품</a>
+            <a href="/medicines/etc" class="b2 bc1">의약외품</a>
           </div>
           <div class="sub_menu_wrap">
             <a href="/hairshops" class="b2 bc1">Haeum</a>
@@ -135,9 +135,9 @@
             </div>
             <div class="sub_menu_wrap">
               <a class="b1 bc1">의약품</a>
-              <a href="#" class="b2 bc1 detail first">전문의약품</a>
-              <a href="#" class="b2 bc1 detail">일반의약품</a>
-              <a href="#" class="b2 bc1 detail">의약외품</a>
+              <a href="/medicines/spec" class="b2 bc1 detail first">전문의약품</a>
+              <a href="/medicines/norm" class="b2 bc1 detail">일반의약품</a>
+              <a href="/medicines/etc" class="b2 bc1 detail">의약외품</a>
             </div>
             <div class="sub_menu_wrap">
               <a class="b1 bc1">미용실</a>
