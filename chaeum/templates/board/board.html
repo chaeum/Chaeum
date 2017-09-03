@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/board.css') }}" />
+
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/board.js') }}"></script>
+{% endblock %}
+{% block content %}
+<div class="bg_wrap">
+  <div class="wrap">
+    <div class="padding_wrap">
+      <!-- title image -->
+      <img src="{{ url_for('static', filename='images/board_title.png') }}" class="img_title"/>
+
+      <!-- search & write -->
+      <div class="search_write">
+        <form>
+          <div class="search">
+            <input type="text" class="b1 bd" /><button class="b1 bg_bc3">찾기</button>
+            <span class="icon_search"></span>
+          </div>
+          <button class="write b1 bg_bc2">글쓰기</button>
+        </form>
+      </div>
+
+      <!-- board list -->
+      <div class="board_wrap">
+        <table class="board" cellspacing="0">
+          <tr>
+            <th class="first" style="width:72px;">번호</th>
+            <th>내용</th>
+            <th style="width:72px;">닉네임</th>
+            <th style="width:129px">등록일자</th>
+            <th style="width:129px">조회수</th>
+          </tr>
+          {% set l = range(20,10,-1) %}
+          {% for value in l %}
+          <tr>
+            <td class="first">{{ value }}</td>
+            <td class="text">오늘 본 유머 짱웃김</td>
+            <td>nayana1004</td>
+            <td>2017-10-20</td>
+            <td>200000</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% include 'util/pagination.html' %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

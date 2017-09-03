@@ -23,6 +23,11 @@
 .popup_body input[type=radio] {display:none;}
 .popup_body input[type=radio] + label {display:inline-block;padding:16px 0;border-width:1px;cursor:pointer;}
 .popup_body input[type=radio]:checked + label {background-color:#ff531d;color:#ffffff;border:1px solid #ff531d;}
+.popup_body .popup_text {margin-bottom:51px;}
+.popup_body .popup_text textarea {width:482px;height:84px;}
+.popup_body .popup_image .popup_images {margin-bottom:23px;}
+.popup_body .popup_image .popup_images img {margin-right:5px;}
+.popup_body .popup_image .popup_images .btn_upload_image {width:94px;height:69px;background-image:url('../images/btn_append_image.png');vertical-align:top;}
 .popup_frame .popup_footer {height:3.25em;padding:0.75em 1.875em 0.75em 1.875em;background-color:#f3f3f3;}
 
 /* sign in */
@@ -96,11 +101,6 @@
 .popup_review .popup_body .review_score img {float:right;}
 .popup_review .popup_body .icon_review_score {display:inline-block;margin-right:5px;width:30px;height:23px;background-image:url('../images/ico_review_score_on.png');}
 .popup_review .popup_body .icon_review_score.off {background-image:url('../images/ico_review_score_off.png');}
-.popup_review .popup_body .review_text {margin-bottom:51px;}
-.popup_review .popup_body .review_text textarea {width:482px;height:84px;}
-.popup_review .popup_body .review_image .review_images {margin-bottom:23px;}
-.popup_review .popup_body .review_image .review_images img {margin-right:5px;}
-.popup_review .popup_body .review_image .review_images .btn_upload_image {width:94px;height:69px;background-image:url('../images/btn_append_image.png');vertical-align:top;}
 .popup_review .popup_footer {text-align:center;padding:13px;height:47px;}
 .popup_review .popup_footer button {width:166px;height:47px;padding:15px;}
 .popup_review .popup_footer button.close {margin-right:15px;}
@@ -118,3 +118,11 @@
 .popup_program .popup_body .program_steps .program_step .program_step_text p {margin:0;}
 .popup_program .popup_footer {text-align:center;padding:13px;height:47px;}
 .popup_program .popup_footer button {width:166px;height:47px;padding:15px;}
+
+/* board */
+.popup_board .popup_body .popup_text p {margin:0 0 13px;}
+.popup_board .popup_body .popup_text textarea {height:224px;}
+.popup_board .popup_footer {text-align:center;padding:13px;height:47px;}
+.popup_board .popup_footer button {width:166px;height:47px;padding:15px;}
+.popup_board .popup_footer button.close {margin-right:15px;}
+.popup_board .popup_footer button.post {background-color:#9e3dff;}
