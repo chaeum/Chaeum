@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/comp.css') }}" />
+{% endblock %}
+{% block content %}
+<div class="bg_wrap">
+  <div class="wrap">
+    <div class="padding_wrap">
+      <!-- title image -->
+      <img src="{{ url_for('static', filename='images/comp_ewg_title.png') }}" class="img_title"/>
+
+      <p class="ewg_desc h2 bc1">EWG 등급은 EWG라는 미국의 비영리 환경시민단체의 성분 안전성 평가 데이트베이스에서 제시하는 성분 안전도 등급입니다.<br/><br/>EWG(Environmental Working Group)는 환경 문제를 연구하고 있는 비영리단체로서 농업정책, 식품, 에너지, 어린이 건강 문제 등 다양한 방면에서 인류의 건강과 지구 환경 문제를 연구하고 보도하며 미국 의회 법안에 반영되도록 적극 활동하고 있는 단체입니다.<br/><br/>EWG에서는 여러나라에서 발표된 모든 정부 기관, 산업 전문가, 교육기관의 연구 임상 결과를 집계 후 온라인 자료화하여 각 화장품 원료의 안전성과 완제품의 안전성을 0~10 (낮을수록 안전) 으로 평가하여 온라인 사이트에 게시하고 있습니다.</p>
+
+      <img src="{{ url_for('static', filename='images/comp_ewg_info.png') }}" class="img_info" />
+
+    </div>
+  </div>
+</div>
+{% endblock %}

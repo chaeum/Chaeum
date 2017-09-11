@@ -103,3 +103,10 @@ from chaeum.resources.web.medicine import WebMedicineNormList
 api.add_resource(WebMedicineNormList, '/medicines/norm')
 from chaeum.resources.web.medicine import WebMedicineEtcList
 api.add_resource(WebMedicineEtcList, '/medicines/etc')
+
+from chaeum.resources.web.comp import WebCompEWG
+api.add_resource(WebCompEWG, '/comps/ewg')
+from chaeum.resources.web.comp import WebCompList
+api.add_resource(WebCompList, '/comps/list')
+from chaeum.resources.web.comp import WebCompListDetail
+api.add_resource(WebCompListDetail, '/comps/list/<int:listdetail_id>')

@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/comp.css') }}" />
+{% endblock %}
+{% block content %}
+<div class="bg_wrap">
+  <div class="wrap">
+    <div class="padding_wrap">
+      <!-- title image -->
+      <img src="{{ url_for('static', filename='images/comp_list_title.png') }}" class="img_title"/>
+
+      <!-- item list -->
+      <div class="list">
+        {% set l = range(0, 10) %}
+        {% for value in l %}
+        <a href="/comps/list/1" class="item h2 bc1 bg_bc0">피해야 할 주의성분 29가지</a>
+        {% endfor %}
+      </div>
+      {% include 'util/pagination.html' %}
+    </div>
+  </div>
+</div>
+{% endblock %}
