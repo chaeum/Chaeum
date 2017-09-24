@@ -17,7 +17,9 @@
         <a href="/comps/list/1" class="item h2 bc1 bg_bc0">피해야 할 주의성분 29가지</a>
         {% endfor %}
       </div>
+      {% with curPage=1, pageCnt=7 %}
       {% include 'util/pagination.html' %}
+      {% endwith %}
     </div>
   </div>
 </div>

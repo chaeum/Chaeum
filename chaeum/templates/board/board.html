@@ -44,7 +44,9 @@
           </tr>
           {% endfor %}
         </table>
+        {% with curPage=1, pageCnt=7 %}
         {% include 'util/pagination.html' %}
+        {% endwith %}
       </div>
     </div>
   </div>
