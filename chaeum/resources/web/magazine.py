@@ -1,7 +1,7 @@
 from math import ceil
 from flask_restful import reqparse, Resource
-from chaeum import cnx_pool
 from chaeum.common.render import render_html
+from chaeum.common.db import fetch_one_from_db, fetch_all_from_db
 
 list_page_parser = reqparse.RequestParser()
 list_page_parser.add_argument(
@@ -13,11 +13,8 @@ def fetch_list_cnt():
     query = """
         SELECT COUNT(*) FROM TBMAGAZINE
     """
-    conn = cnx_pool.get_connection()
-    cursor = conn.cursor()
     try:
-        cursor.execute(query)
-        result = cursor.fetchone()
+        result = fetch_one_from_db(query)
         if result is not None:
             return result[0]
         else:
@@ -34,11 +31,8 @@ def fetch_list_page(page, pageSize):
         LIMIT %d, %d
     """
 
-    conn = cnx_pool.get_connection()
-    cursor = conn.cursor()
     try:
-        cursor.execute(query % (page * pageSize, pageSize))
-        result = cursor.fetchall()
+        result = fetch_all_from_db(query % (page * pageSize, pageSize))
         list = []
         for res in result:
             id, title, contents, like_cnt, comment_cnt, reg_date, mod_date = res
@@ -54,7 +48,7 @@ def fetch_list_page(page, pageSize):
             list.append(dict)
         return list
     except Exception as e:
-        print('fetch_list_page- %s' % e)
+        print(e)
         return []
 
 
