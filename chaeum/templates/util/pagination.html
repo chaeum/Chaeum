@@ -1,16 +1,31 @@
 <!-- item pagination -->
 <div class="pagination_wrap">
   <div class="pagination">
-    <a href="#" class="left disabled"></a>
-    {% set p = range(1, 7) %}
-    {% set cur = 1 %}
-    {% for index in p %}
-    {% set cl = 'num b1 bc3' %}
-    {% if index == cur %}
-    {% set cl = 'num b1 ac2' %}
+    {% set l_cl = '' %}
+    {% set l_url = '%s?page=%d' % (request.path, (curPage-1)) %}
+    {% if curPage == 1 %}
+    {% set l_cl = 'disabled' %}
+    {% set l_url = '' %}
     {% endif %}
-    <a href="#" class="{{cl}}">{{index}}</a>
+    <a href="{{l_url}}" class="left {{l_cl}}"></a>
+
+    {% set p = range(1, pageCnt+1) %}
+    {% for index in p %}
+    {% set cl = 'bc3' %}
+    {% set c_url = '%s?page=%d' % (request.path, index) %}
+    {% if index == curPage %}
+    {% set cl = 'ac2' %}
+    {% set c_url = '' %}
+    {% endif %}
+    <a href="{{c_url}}" class="num b1 {{cl}}">{{index}}</a>
     {% endfor %}
-    <a href="#" class="right"></a>
+
+    {% set r_cl = '' %}
+    {% set r_url = '%s?page=%d' % (request.path, (curPage+1)) %}
+    {% if curPage == pageCnt %}
+    {% set r_cl = 'disabled' %}
+    {% set r_url = '' %}
+    {% endif %}
+    <a href="{{r_url}}" class="right {{r_cl}}"></a>
   </div>
 </div>
