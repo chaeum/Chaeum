@@ -62,4 +62,18 @@ $(function() {
             }
         });
     });
+
+    // kakao login
+    Kakao.init('612d22906437ce3b264c7e8881e2a306');
+    $('button.kakao').on('click', function(e) {
+        Kakao.Auth.login({
+            success: function(authObj) {
+                alert(JSON.stringify(authObj));
+            },
+            fail: function(err) {
+                alert(JSON.stringify(err));
+            }
+        });
+        e.preventDefault();
+    });
 });
